@@ -14,7 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>All New Book</title>
-        <%@include file="all_component/allCss.jsp" %>
+        <%@include file="./all_component/allCss.jsp" %>
         <style type="text/css">
             .back-img{
                 background: url("img/b.jpg");
@@ -29,7 +29,7 @@
         </style>
     </head>
     <body>
-        <%@include file="all_component/navbar.jsp" %>
+        <%@include file="./all_component/navbar.jsp" %>
         <%
         User u = (User)session.getAttribute("userobj");
     %>

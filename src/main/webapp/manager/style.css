@@ -1,0 +1,69 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Apr 20, 2024, 6:22:30 PM
+    Author     : PC
+*/
+
+.bg-custom{
+    background-color: #303f9f;
+}
+.navbar .nav-item:hover .nav-link{
+    background-color: white;
+    color: #303f9f;
+    border-radius: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    color: gray;
+}
+
+.custom-btn{
+    width:80px; height: 40px
+}
+
+.custom-container{
+    width:100%;
+    margin: 0px auto;
+}
+
+.td-bookId{
+    width: 5%;
+}
+
+.td-bookName, .td-bookAuthor{
+    width: 25%;
+}
+
+.td-bookCategories, .td-bookStatus{
+    width: 12.5%;
+}
+
+.td-bookPrice{
+    width: 10%;
+}
+
+.table th, .table td {
+    white-space: normal; 
+}
+
+.td-deleteChoose, .td-checkbox{
+    width: 10%;
+}
+
+.table-wrapper{
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.container{
+    min-height: 600px;
+}

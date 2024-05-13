@@ -1,4 +1,5 @@
 CREATE SCHEMA ebook-app ;
+
 CREATE TABLE ebook-app.`user` (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(45) NULL,
@@ -12,6 +13,7 @@ CREATE TABLE ebook-app.`user` (
   pincode varchar(45) null,
   role ENUM('User', 'Admin','Store manager'),
   PRIMARY KEY (id));
+
 CREATE TABLE ebook-app.`book_dtls` (
   bookId INT NOT NULL AUTO_INCREMENT,
   bookname VARCHAR(45) NULL,
@@ -23,6 +25,7 @@ CREATE TABLE ebook-app.`book_dtls` (
   PRIMARY KEY (bookId));
 ALTER TABLE ebook-app.`book_dtls` 
 ADD COLUMN email VARCHAR(45) NULL AFTER photo;
+
 CREATE TABLE ebook-app.`cart` (
   cid INT NOT NULL AUTO_INCREMENT,
   bid INT NULL,
@@ -32,6 +35,7 @@ CREATE TABLE ebook-app.`cart` (
   price DOUBLE NULL,
   total_price DOUBLE NULL,
   PRIMARY KEY (cid));
+
 CREATE TABLE ebook-app.`book_order` (
   id INT NOT NULL AUTO_INCREMENT,
   order_id VARCHAR(45) NULL,
@@ -44,3 +48,31 @@ CREATE TABLE ebook-app.`book_order` (
   price VARCHAR(45) NULL,
   payment VARCHAR(45) NULL,
   PRIMARY KEY (id));
+
+drop table if exists suppliers;
+create table suppliers(
+	id int auto_increment not null,
+  name varchar(45) not null,
+  phone varchar(45) not null,
+  email varchar(45) not null,
+  address varchar(45) not null,
+  CONSTRAINT PK_supplier PRIMARY KEY CLUSTERED (id ASC),
+	CONSTRAINT UK_supplier UNIQUE (id)
+);
+
+drop table if exists imported_books;
+create table imported_books(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  importedQuantity INT,
+  idBookDtls INT,
+  idImportedBill INT
+);
+
+drop table if exists imported_bills;
+create table imported_bills(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  importedDate DATETIME,
+  totalAmount DOUBLE,
+  idSupplier INT,
+  idUser INT
+);

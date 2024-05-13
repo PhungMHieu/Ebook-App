@@ -10,8 +10,8 @@ package com.DAO;
  */
 import com.DB.DBConnect;
 import com.entity.User;
-import static java.rmi.server.LogStream.log;
 import java.sql.*;
+
 public class UserDAOImpl implements UserDAO{
     private Connection conn;
 
@@ -51,16 +51,14 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
-    public User login(String email, String password, String role) {
-        User us = null;
+    public User login(User us) {
         try {
-            String sql ="select * from user  where email=? and password=? and role=?";
+            String sql ="select * from user  where email=? and password=?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, email);
-            ps.setString(2, password);
-            ps.setString(3, role);
+            ps.setString(1, us.getEmail());
+            ps.setString(2, us.getPassword());
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
+            if (rs.next()) {
                 us = new User();
                 us.setName(rs.getString("name"));
                 us.setId(rs.getInt("id"));
@@ -71,14 +69,18 @@ public class UserDAOImpl implements UserDAO{
                 us.setCity(rs.getString("city"));
                 us.setState(rs.getString("state"));
                 us.setPincode(rs.getString("pincode"));
-                us.setRole("role");
-            }
-            
+                us.setRole(rs.getString("role"));
+            } 
+            else{
+                us = null;
+            }           
         } catch (Exception e) {
             e.printStackTrace();
+            us = null;
         }
         return us;
     }
+
     @Override
     public boolean checkPassword(int id, String ps) {
         boolean f=false;

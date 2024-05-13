@@ -14,16 +14,16 @@ public class DBConnect {
     public static Connection getConn(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ebook-app","root","kakachiz");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ebook-app","admin","admin");
             System.out.println(conn);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return conn;
     }
-    public static void main(String[] args) {
-        DBConnect dbConnect = new DBConnect();
-        Connection con = dbConnect.getConn();
-//        System.out.println(con);
-    }
+//     public static void main(String[] args) {
+//         DBConnect dbConnect = new DBConnect();
+//         Connection con = dbConnect.getConn();
+//         System.out.println(con);
+//     }
 }
