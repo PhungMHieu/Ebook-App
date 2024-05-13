@@ -11,10 +11,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ebook: Login</title>
-        <%@include file="all_component/allCss.jsp" %>
+        <%@include file="./all_component/allCss.jsp" %>
     </head>
     <body style="background-color: #f0f1f2;">
-        <%@include file="all_component/navbar.jsp" %>
+        <%@include file="./all_component/navbar.jsp" %>
         <div class="container">
             <div class="row mt-2">
                 <div class="col-md-4 offset-md-4">
@@ -38,14 +38,6 @@
                                   <input type="password" class="form-control" id="exampleInputPassword1" 
                                          placeholder="Password" required="required"
                                          name="password">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleRole1">Select User Type</label>
-                                    <select class="form-control" id="exampleRole1" name="role">
-                                        <option>Admin</option>
-                                        <option>User</option>
-                                        <option>Store manager</option>
-                                    </select>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Login</button><br>

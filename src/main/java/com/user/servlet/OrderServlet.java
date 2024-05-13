@@ -13,7 +13,6 @@ import com.DAO.CartDAOImpl;
 import com.DB.DBConnect;
 import com.entity.Book_Order;
 import com.entity.Cart;
-import com.entity.User;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

@@ -14,7 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ebook: Index</title>
-        <%@include file="all_component/allCss.jsp" %>
+        <%@include file="./all_component/allCss.jsp" %>
         <style type="text/css">
             .back-img{
                 background: url("img/b.jpg");
@@ -32,7 +32,7 @@
         <%
             User u = (User)session.getAttribute("userobj");
         %>
-        <%@include file="all_component/navbar.jsp" %>
+        <%@include file="./all_component/navbar.jsp" %>
         <div class="container-fluid back-img">
             <h2 class="text-center text-danger">Ebook Management System</h2>
         </div>

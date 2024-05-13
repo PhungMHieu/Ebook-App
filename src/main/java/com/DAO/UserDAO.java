@@ -13,7 +13,7 @@ import com.entity.User;
 public interface UserDAO {
     public boolean userRegister(User us);
     
-    public User login(String email, String password, String role);
+    public User login(User us);
     
     public boolean checkPassword(int id, String ps);
     
