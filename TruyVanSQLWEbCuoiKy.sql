@@ -11,7 +11,7 @@ CREATE TABLE ebook-app.`user` (
   city VARCHAR(45) NULL,
   state VARCHAR(45) NULL,
   pincode varchar(45) null,
-  role ENUM('User', 'Admin','Store manager'),
+  role ENUM('User', 'Admin','manager'),
   PRIMARY KEY (id));
 
 CREATE TABLE ebook-app.`book_dtls` (
