@@ -8,7 +8,7 @@
 <%@ page import="com.DAO.*" %>
 <%@ page import="com.DB.DBConnect" %>
 <%@ page import="java.util.*" %>
-<%@ page import="com.entity.BookDtls" %>
+<%@ page import="com.entity.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,6 +33,9 @@
         <div class="container-fluid">
             <div class="row p-3">
                 <%
+                    User u = (User)session.getAttribute("userobj");
+                %>
+                <%
             BookDAOImpl dao2 = new BookDAOImpl(DBConnect.getConn());
             List<BookDtls> list2 = dao2.getAllRecentBooks();
             for(BookDtls b: list2)
@@ -51,16 +54,14 @@
                             Categories:<%=b.getBookCategory() %></p>
                             <div class="row">
                                 <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm ml-5">View Details</a>
-                                <a href="" class="btn btn-danger btn-sm"><%=b.getPrice()%>
-                                    <i class="fas fa-dollar-sign"></i>
-                                </a>
+                                <a href="" class="btn btn-danger btn-sm ml-5"><i class="fas fa-dollar-sign"></i><%=b.getPrice()%></a>
                             </div>
                             <%}else{%>
                                  Categories:<%=b.getBookCategory() %></p>
                             <div class="row">
-                                <a href="" class="btn btn-danger btn-sm ml-5"><i class="fas fa-cart-plus"></i>Add Cart</a>
+                                <a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-5"><i class="fas fa-cart-plus"></i>Add Cart</a>
                                 <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm ml-1">View Details</a>
-                                <a href="" class="btn btn-danger btn-sm"><%=b.getPrice()%><i class="fas fa-dollar-sign"></i></a>
+                                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-dollar-sign"></i><%=b.getPrice()%></a>
                             </div>
                             <%}
                             %>
@@ -68,7 +69,8 @@
                                 <a href="" class="btn btn-danger btn-sm ml-2">
                                     <i class="fas fa-cart-plus"></i> Add Cart</a>
                                 <a href="" class="btn btn-success btn-sm ml-1">View Details</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%>
+                                <a href="" class="btn btn-danger btn-sm ml-1">
+                                <%--<%=b.getPrice()%>--%>
                                     <i class="fas fa-dollar-sign"></i>
                                 </a>
                             </div>-->

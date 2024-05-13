@@ -46,9 +46,8 @@
                             <p><%=b.getAuthor() %></p>
 
                             <div class="row text-center">
-                                <a href="" class="btn btn-danger btn-sm ml-5"><i class="fas fa-cart-plus"></i>Add Cart</a>
-                                <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm ml-1">View Details</a>
-                                <a href="" class="btn btn-danger btn-sm"><%=b.getPrice()%><i class="fas fa-dollar-sign"></i>
+                                <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm ml-5">View Details</a>
+                                <a href="" class="btn btn-danger btn-sm ml-5"><%=b.getPrice()%><i class="fas fa-dollar-sign"></i>
                                 </a>
                             </div>
                         </div>

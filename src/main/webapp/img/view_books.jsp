@@ -8,7 +8,7 @@
 <%@ page import="com.DAO.*" %>
 <%@ page import="com.DB.DBConnect" %>
 <%@ page import="java.util.*" %>
-<%@ page import="com.entity.*" %>
+<%@ page import="com.entity.BookDtls" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,9 +18,7 @@
     </head>
     <body style="background-color: #f0f1f2">
         <%@include file="all_component/navbar.jsp" %>
-        <%
-        User u = (User)session.getAttribute("userobj");
-    %>
+        
         <%
             int bid=Integer.parseInt(request.getParameter("bid"));
             BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
@@ -62,22 +60,12 @@
                       {%>
                         <div class="text-center p-3">
                         <a href="index.jsp" class="btn btn-success"><i class="fas fa-cart-plus"></i>Continue Shopping</a>
-                        <a href="" class="btn btn-danger"><i class="fas fa-dollar-sign"></i><%=b.getPrice()%></a>
+                        <a href="" class="btn btn-danger"><i class="fas fa-dollar-sign"></i>200</a>
                         </div>
                         <%}else{%>
                         <div class="text-center p-3">
-                            <%
-                            if (u == null) {
-                            %>
-                            <a href="login.jsp" class="btn btn-danger btn-sm ml-5">Add Cart</a>
-                            <%
-                            } else {
-                            %>
-                            <a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2"><i class="fas fa-cart-plus"></i>Add Cart</a>
-                            <%
-                            }
-                            %>
-                            <a href="" class="btn btn-danger"><i class="fas fa-dollar-sign"></i><%=b.getPrice()%></a>
+                            <a href="" class="btn btn-primary"><i class="fas fa-cart-plus"></i>Add Cart</a>
+                            <a href="" class="btn btn-danger"><i class="fas fa-dollar-sign"></i>200</a>
                         </div>
                          <%   
                         }
