@@ -11,6 +11,8 @@ package com.DAO;
 import com.DB.DBConnect;
 import com.entity.User;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAOImpl implements UserDAO{
     private Connection conn;
@@ -141,6 +143,89 @@ public class UserDAOImpl implements UserDAO{
             e.printStackTrace();
         }
 
+        return f;
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        List<User> list =  new ArrayList<>();
+        User u = null;
+        try {
+            String sql = "select * from user";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                u = new User();
+                u.setId(rs.getInt("id"));
+                u.setName(rs.getString("name"));
+                u.setPhno(rs.getString("phno"));
+                u.setEmail(rs.getString("email"));
+                u.setRole(rs.getString("role"));
+                list.add(u);
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+    @Override
+    public User getUserById(int id) {
+        User u=null;
+        try {
+            String sql = "select * from user where id=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                u = new User();
+                u.setId(id);
+                u.setName(rs.getString("name"));
+                u.setEmail(rs.getString("email"));
+                u.setPhno(rs.getString("phno"));
+                u.setRole(rs.getString("role"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return u;
+    }
+
+    public boolean updateEditUsers(User u) {
+        boolean f = false;
+        try {
+            String sql = "update user set name=?,email=?,phno=? where id = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, u.getName());
+            ps.setString(2, u.getEmail());
+            ps.setString(3, u.getPhno());
+            ps.setInt(4, u.getId());
+            System.out.println(u);
+            System.out.println("1");
+            int i = ps.executeUpdate();
+            System.out.println(i);
+            if(i == 1){
+                f= true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return f;
+    }
+
+    @Override
+    public boolean deleteUsers(int id) {
+        boolean f = false;
+        try {
+            String sql = "delete from user where id =?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            int i = ps.executeUpdate();
+            if(i==1){
+                f = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return f;
     }
 }

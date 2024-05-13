@@ -7,10 +7,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored="false" %>
-<%@ page import="com.DAO.BookDAOImpl" %>
-<%@ page import="com.DB.DBConnect" %>
+<%@ page import="com.DAO.*" %>
+<%@ page import="com.DB.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="com.entity.BookDtls" %>
+<%@ page import="com.entity.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,36 +38,29 @@
             <thead class="bg-primary text-white">
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Book Name</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Categories</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">phone number</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <%
-                   BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
-                   List<BookDtls> list = dao.getAllBooks();
-                   for(BookDtls b: list){
+                   UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
+                   List<User> list = dao.getAllUsers();
+                   for(User u: list){
                     %>
                     <tr>
-                        <td><%=b.getBookId() %></td>
-                        <td><img src="../book/<%=b.getPhotoName() %>" style="width:50px; height: 50px;"></td>
-                        <td><%=b.getBookName() %></td>
-                        <td><%=b.getAuthor() %></td>
-                        <td><%=b.getPrice() %></td>
-                        <td><%=b.getBookCategory() %></td>
-                        <td><%=b.getStatus() %></td>
-
+                        <td><%=u.getId() %></td>
+                        <td><%=u.getName() %></td>
+                        <td><%=u.getEmail() %></td>
+                        <td><%=u.getPhno() %></td>
                         <td>
-                            <a href="edit_books.jsp?id=<%=b.getBookId() %>" class="btn btn-sm btn-primary">Edit</a>
-                            <a data-toggle="modal" data-target="#exampleModalCenter2" class="btn btn-sm btn-danger text-white">Delete</a>
+                            <a href="edit_users.jsp?id=<%=u.getId() %>" class="btn btn-sm btn-primary">Edit</a>
+                            <a data-toggle="modal" data-target="#exampleModalCenter1" class="btn btn-sm btn-danger text-white">Delete</a>
                         </td>
                     </tr>
-                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -80,7 +73,7 @@
                                     <div class="text-center">
                                         <h4>Do you want to delete</h4>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <a href="../delete?id=<%=b.getBookId() %>" class="btn btn-primary btn-danger" type="button">Delete</a>
+                                        <a href="../deleteUser?id=<%=u.getId() %>" class="btn btn-primary btn-danger" type="button">Delete</a>
                                         <!--<a href="../logout" type="button" class="btn btn-primary text-white">Log out</a>-->
                                     </div>
                                 </div>
@@ -98,3 +91,10 @@
 </html>
 
 
+
+<!--<td>
+                            <a href="edit_books.jsp?id=
+<%--<%=b.getBookId() %>--%>
+" class="btn btn-sm btn-primary">Edit</a>
+-->                            
+<!--                        </td>-->

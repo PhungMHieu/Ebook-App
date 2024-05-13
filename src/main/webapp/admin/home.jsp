@@ -66,14 +66,15 @@
                 </div>
                 
                 <div class="col-md-3">
-                    <a href="data-toggle="modal" data-target="#exampleModalCenter"></a>
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <i class="fas fa-sign-out-alt fa-3x text-primary"></i><br>
-                            <h4>Logout</h4>
-                            ------------------
+                    <a href="all_users.jsp">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user fa-3x text-primary"></i><br>
+                                <h4>User</h4>
+                                ------------------
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -98,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <div style="margin-top:130px">
+        <div style="margin-top: 300px">
             <%@include file="footer.jsp" %>
         </div>
         <!--<h1>Admin:Home</h1>-->

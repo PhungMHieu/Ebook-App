@@ -5,6 +5,7 @@
 package com.DAO;
 
 import com.entity.User;
+import java.util.List;
 
 /**
  *
@@ -20,4 +21,7 @@ public interface UserDAO {
     public boolean updateProfile(User us);
     
     public boolean checkUser (String em);
+    public List<User> getAllUsers();
+    public User getUserById(int id);
+    public boolean deleteUsers(int id);
 }
