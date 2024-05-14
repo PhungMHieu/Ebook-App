@@ -34,6 +34,7 @@
             <h5 class="text-center text-danger">${failedMsg}</h5>
             <c:remove var="failedMsg" scope="session"/>
         </c:if>
+        
         <table class="table table-striped ">
             <thead class="bg-primary text-white">
                 <tr>
@@ -57,10 +58,10 @@
                         <td><%=u.getPhno() %></td>
                         <td>
                             <a href="edit_users.jsp?id=<%=u.getId() %>" class="btn btn-sm btn-primary">Edit</a>
-                            <a data-toggle="modal" data-target="#exampleModalCenter1" class="btn btn-sm btn-danger text-white">Delete</a>
+                            <a data-toggle="modal" data-target="#exampleModalCenter1<%=u.getId() %>" class="btn btn-sm btn-danger text-white">Delete</a>
                         </td>
                     </tr>
-                    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal fade" id="exampleModalCenter1<%=u.getId() %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -79,7 +80,7 @@
                                 </div>
                                 <div class="modal-footer"></div>
                             </div>
-                        </div>
+                        </div>             
                     </div>
                      <%
                     }
@@ -87,6 +88,7 @@
                 
             </tbody>
         </table>
+        
     </body>
 </html>
 

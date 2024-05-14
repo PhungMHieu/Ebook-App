@@ -73,11 +73,11 @@
                             <%
                             } else {
                             %>
-                            <a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2"><i class="fas fa-cart-plus"></i>Add Cart</a>
+                            <a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>" class="btn btn-primary ml-2"><i class="fas fa-cart-plus"></i>Add Cart</a>
                             <%
                             }
                             %>
-                            <a href="" class="btn btn-danger"><i class="fas fa-dollar-sign"></i><%=b.getPrice()%></a>
+                            <a href="" class="btn btn-danger"><%=b.getPrice()%><i class="fas fa-dollar-sign"></i></a>
                         </div>
                          <%   
                         }

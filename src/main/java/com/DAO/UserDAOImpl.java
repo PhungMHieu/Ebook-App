@@ -228,4 +228,24 @@ public class UserDAOImpl implements UserDAO{
         }
         return f;
     }
+
+    @Override
+    public boolean addUsers(User u) {
+        boolean f= false;
+        try {
+            String sql = "insert into user(name,email,phno,role) values(?,?,?,?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, u.getName());
+            ps.setString(2, u.getEmail());
+            ps.setString(3, u.getPhno());
+            ps.setString(4, u.getRole());
+            int i = ps.executeUpdate();
+            if(i == 1){
+                f = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return f;
+    }
 }

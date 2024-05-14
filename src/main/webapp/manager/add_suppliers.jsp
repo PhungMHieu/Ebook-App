@@ -83,7 +83,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Thêm sách thành công!
+                        Thêm nhà cung cấp thành công!
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>

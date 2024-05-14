@@ -29,7 +29,7 @@
         </c:if>
         <div class="container">
             <div class="row p-5">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <a href="add_books.jsp">
                         <div class="card">
                         <div class="card-body text-center">
@@ -41,7 +41,7 @@
                     </a>
                 </div>
                 
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <a href="all_books.jsp">
                         <div class="card">
                         <div class="card-body text-center">
@@ -53,7 +53,7 @@
                     </a>
                 </div>
                 
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <a href="orders.jsp">
                     <div class="card">
                     <div class="card-body text-center">
@@ -64,13 +64,25 @@
                     </div>
                     </a>
                 </div>
-                
-                <div class="col-md-3">
+            </div>
+            <div class="row p-2">
+                <div class="col-md-6">
                     <a href="all_users.jsp">
                         <div class="card">
                             <div class="card-body text-center">
                                 <i class="fas fa-user fa-3x text-primary"></i><br>
-                                <h4>User</h4>
+                                <h4>List User</h4>
+                                ------------------
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="add_users.jsp">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user fa-3x text-primary"></i><br>
+                                <h4>Add User</h4>
                                 ------------------
                             </div>
                         </div>

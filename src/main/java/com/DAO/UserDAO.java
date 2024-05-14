@@ -12,6 +12,7 @@ import java.util.List;
  * @author PC
  */
 public interface UserDAO {
+    public boolean addUsers(User u);
     public boolean userRegister(User us);
     
     public User login(User us);

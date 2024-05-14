@@ -54,14 +54,14 @@
                             Categories:<%=b.getBookCategory() %></p>
                             <div class="row">
                                 <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm ml-5">View Details</a>
-                                <a href="" class="btn btn-danger btn-sm ml-5"><i class="fas fa-dollar-sign"></i><%=b.getPrice()%></a>
+                                <a href="" class="btn btn-danger btn-sm ml-5"><%=b.getPrice()%><i class="fas fa-dollar-sign"></i></a>
                             </div>
                             <%}else{%>
                                  Categories:<%=b.getBookCategory() %></p>
                             <div class="row">
                                 <a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-5"><i class="fas fa-cart-plus"></i>Add Cart</a>
                                 <a href="view_books.jsp?bid=<%=b.getBookId()%>" class="btn btn-success btn-sm ml-1">View Details</a>
-                                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-dollar-sign"></i><%=b.getPrice()%></a>
+                                <a href="" class="btn btn-danger btn-sm"><%=b.getPrice()%><i class="fas fa-dollar-sign"></i></a>
                             </div>
                             <%}
                             %>

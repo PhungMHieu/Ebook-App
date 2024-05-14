@@ -64,10 +64,10 @@
 
                         <td>
                             <a href="edit_books.jsp?id=<%=b.getBookId() %>" class="btn btn-sm btn-primary">Edit</a>
-                            <a data-toggle="modal" data-target="#exampleModalCenter2" class="btn btn-sm btn-danger text-white">Delete</a>
+                            <a data-toggle="modal" data-target="#exampleModalCenter2_<%=b.getBookId() %>" class="btn btn-sm btn-danger text-white">Delete</a>
                         </td>
                     </tr>
-                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal fade" id="exampleModalCenter2_<%=b.getBookId() %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -81,7 +81,6 @@
                                         <h4>Do you want to delete</h4>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         <a href="../delete?id=<%=b.getBookId() %>" class="btn btn-primary btn-danger" type="button">Delete</a>
-                                        <!--<a href="../logout" type="button" class="btn btn-primary text-white">Log out</a>-->
                                     </div>
                                 </div>
                                 <div class="modal-footer"></div>
