@@ -7,6 +7,7 @@ com\DAO\UserDAO.class
 com\manager\servlet\SaveImportedBillServlet.class
 com\user\servlet\UpdateProfileServlet.class
 com\manager\servlet\ManagerAddBookServlet.class
+com\admin\servlet\EditUsersServlet.class
 com\admin\servlet\EditBooksServlet.class
 com\DAO\CartDAO.class
 com\user\servlet\RemoveBookCart.class
@@ -18,6 +19,7 @@ com\DAO\ImportedBookDAO.class
 com\DAO\SupplierDAOImpl.class
 com\entity\BookDtls.class
 com\entity\ImportedBill.class
+com\admin\servlet\UsersAdd.class
 com\DAO\SupplierDAO.class
 com\user\servlet\CartServlet.class
 com\DAO\ImportedBillDAO.class
@@ -25,6 +27,7 @@ com\entity\Supplier.class
 com\DAO\UserDAOImpl.class
 com\admin\servlet\BooksAdd.class
 com\DAO\BookDAOImpl.class
+com\admin\servlet\UsersDeleteServlet.class
 com\manager\servlet\SearchBookServlet.class
 com\admin\servlet\BooksDeleteServlet.class
 com\DAO\BookOrderImpl.class

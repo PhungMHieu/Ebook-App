@@ -2,6 +2,8 @@
 var selectedBooks = JSON.parse(localStorage.getItem('selectedBooks'));    
 // Lấy thông tin về nhà cung cấp từ local storage
 var selectedSupplier = JSON.parse(localStorage.getItem('selectedSupplier')); 
+// Biến cờ để kiểm soát việc gọi hàm saveBill()
+var saveBillCalled = false; 
 document.addEventListener('DOMContentLoaded', function() {
     // Hiển thị thông tin về nhà cung cấp trên form hóa đơn
     document.getElementById('supplier_name').textContent = selectedSupplier.name;
@@ -81,6 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function saveBill() {
+    // Kiểm tra xem hàm đã được gọi trước đó hay không
+    if (saveBillCalled) {
+        return;
+    }
+    saveBillCalled = true;
     var importedDate = document.getElementById('imported_date').textContent;
     console.log(importedDate);
     var totalAmount = parseFloat(document.getElementById('total_amount').textContent.replace('$', ''));
@@ -138,22 +145,26 @@ function saveBill() {
 
 
 $(document).ready(function() {
-    // Hide modals when the page is loaded
-    $('#successModal').modal('hide');
-    $('#errorModal').modal('hide');
+    // Xóa trình lắng nghe sự kiện thừa trước khi thêm mới
+    $('#successModal').off('shown.bs.modal');
+    $('#errorModal').off('hidden.bs.modal');
 
-    // Show the success modal when it's shown
+    // Thêm trình lắng nghe sự kiện mới
     $('#successModal').on('shown.bs.modal', function(e) {
-        // Call saveBill function when success modal is shown
-        saveBill();
+        // Kiểm tra xem hàm saveBill() đã được gọi trước đó hay không
+        if (!saveBillCalled) {
+            saveBill();
+        }
     });
 
     $('#successModal').on('hidden.bs.modal', function(e) {
         window.location.href = './home.jsp'; // Replace '/' with the URL of your homepage
     });
 
-    // Redirect to importbook page when OK button on error modal is clicked
     $('#errorModal').on('hidden.bs.modal', function(e) {
-        window.location.href = './search_supplier.jsp'; // Replace '/importbook' with the URL of your importbook page
+        // Kiểm tra xem hàm saveBill() đã được gọi trước đó hay không
+        if (!saveBillCalled) {
+            window.location.href = './search_supplier.jsp'; // Replace '/importbook' with the URL of your importbook page
+        }
     });
 });
