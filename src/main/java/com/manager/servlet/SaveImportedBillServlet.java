@@ -62,7 +62,7 @@ public class SaveImportedBillServlet extends HttpServlet{
                 importedBill.setTotal_amount(total_amount);
                 //System.out.println("Total amount: " + importedBill.getTotal_amount());
                 //System.out.println("Step 1: " + jsonObject.get("importedDate").getAsString());
-//                DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("M/d/yyyy h:mm:ss a");
+//                DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("M/d/yyyy, h:mm:ss a");
                 DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("HH:mm:ss d/M/yyyy");
                 LocalDateTime imported_date = LocalDateTime.parse(jsonObject.get("importedDate").getAsString(), dateFormatter);
                 System.out.println(imported_date);
