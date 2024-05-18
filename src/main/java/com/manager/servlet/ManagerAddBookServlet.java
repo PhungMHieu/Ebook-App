@@ -115,7 +115,7 @@ public class ManagerAddBookServlet extends HttpServlet{
                     String path = getServletContext().getRealPath("")+"book";
                     File file = new File(path);
                     part.write(path+File.separator+fileName);
-                    session.setAttribute("succMsg", "Book Add Successfully");
+                    session.setAttribute("succMsgAddBook", "Book Add Successfully");
                     response.sendRedirect("manager/add_books.jsp");
                 } else {
                     session.setAttribute("failedMsg", "Something wrong on Server");

@@ -88,7 +88,7 @@ public class ManagerAddSupplierServlet extends HttpServlet{
                 SupplierDAOImpl dao = new SupplierDAOImpl(DBConnect.getConn());
                 boolean f = dao.addSupplier(s);
                 if(f){
-                    session.setAttribute("succMsg", "Supplier Add Successfully");
+                    session.setAttribute("succMsgAddSupplier", "Supplier Add Successfully");
                     response.sendRedirect("manager/add_suppliers.jsp");
                 } else {
                     session.setAttribute("failedMsg", "Something wrong on Server");
