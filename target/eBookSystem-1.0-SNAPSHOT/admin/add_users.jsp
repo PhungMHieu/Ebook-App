@@ -60,7 +60,6 @@
                                 <label for="inputState">Role</label>
                                 <select class="form-control" id="role" name="role">
                                     <option selected>--select--</option>
-                                    <option value="Admin">Admin</option>
                                     <option value="User">User</option>
                                     <option value="manager">Manager</option>
                                 </select>
