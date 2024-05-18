@@ -22,8 +22,8 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="text-center">Add New Supplier</h4>
-                            <c:if test="${not empty succMsg}">
-                                <c:remove var="succMsg" scope="session"/>
+                            <c:if test="${not empty succMsgAddSupplier}">
+                                <c:remove var="succMsgAddSupplier" scope="session"/>
                                 <script>
                                     $(document).ready(function(){
                                         $('#successModal').modal('show');
