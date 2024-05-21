@@ -15,7 +15,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin: All Books</title>
+        <title>Admin: All Users</title>
          <%@include file="allCss.jsp" %>
     </head>
     <body>
@@ -42,6 +42,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">phone number</th>
+                    <th scope="col">Password</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -56,9 +57,10 @@
                         <td><%=u.getName() %></td>
                         <td><%=u.getEmail() %></td>
                         <td><%=u.getPhno() %></td>
+                        <td><%=u.getPassword() %></td>
                         <td>
-                            <a href="edit_users.jsp?id=<%=u.getId() %>" class="btn btn-sm btn-primary">Edit</a>
-                            <a data-toggle="modal" data-target="#exampleModalCenter1<%=u.getId() %>" class="btn btn-sm btn-danger text-white">Delete</a>
+                            <a href="edit_users.jsp?id=<%=u.getId() %>" class="btn btn-sm btn-primary"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                            <a data-toggle="modal" data-target="#exampleModalCenter1<%=u.getId() %>" class="btn btn-sm btn-danger text-white"><i class="fa-solid fa-trash"></i> Delete</a>
                         </td>
                     </tr>
                     <div class="modal fade" id="exampleModalCenter1<%=u.getId() %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

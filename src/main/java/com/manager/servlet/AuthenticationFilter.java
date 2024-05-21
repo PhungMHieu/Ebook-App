@@ -27,10 +27,10 @@ public class AuthenticationFilter implements Filter {
 
         String requestURI = httpRequest.getRequestURI();
 
-        if (isLoggedIn || requestURI.endsWith("login.jsp") || requestURI.endsWith("login") || requestURI.endsWith("index.jsp")) {
+        if (isLoggedIn || requestURI.endsWith("login.jsp") || requestURI.endsWith("login") || requestURI.endsWith("index.jsp") || requestURI.endsWith("register.jsp") || requestURI.endsWith("register")) {
             // Nếu đã đăng nhập hoặc yêu cầu truy cập trang đăng nhập, cho phép truy cập
             chain.doFilter(request, response);
-        } else {
+        }else {
             // Nếu chưa đăng nhập và không phải trang đăng nhập, điều hướng đến trang đăng nhập
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/index.jsp");
         }

@@ -17,7 +17,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin: Add Books</title>
+        <title>Admin: Add Users</title>
         <%@include file="allCss.jsp" %>
     </head>
     <body style="background-color: #0f2f2;">
@@ -56,6 +56,11 @@
                                         required="required"
                                        name="phno">
                             </div>
+                            <div class="form-group">
+                                  <label for="exampleInputPassword1">Pasword</label>
+                                  <input type="password" class="form-control" id="exampleInputPassword1" 
+                                         required="required" name="password">
+                                </div>
                             <div class="form-group">
                                 <label for="inputState">Role</label>
                                 <select class="form-control" id="role" name="role">

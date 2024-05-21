@@ -59,8 +59,8 @@ public class LogoutServlet extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             session.removeAttribute("userobj");
-            HttpSession session2 = request.getSession();
-            session.setAttribute("succMsg", "Logout Sucessfully");
+//            HttpSession session2 = request.getSession();
+//            session.setAttribute("succMsg", "Logout Sucessfully");
             response.sendRedirect("login.jsp");
             
         } catch (Exception e) {

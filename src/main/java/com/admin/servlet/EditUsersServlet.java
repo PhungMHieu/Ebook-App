@@ -78,18 +78,20 @@ public class EditUsersServlet extends HttpServlet {
 //            log(bookName);
             String email = request.getParameter("email");
             String phno = request.getParameter("phno");
+            String password = request.getParameter("password");
 //            log(price);
             User u = new User();
             u.setId(id);
             u.setName(name);
             u.setEmail(email);
             u.setPhno(phno);
+            u.setPassword(password);
             UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
             boolean f =  dao.updateEditUsers(u);
             HttpSession session = request.getSession();
             
             if(f){
-                session.setAttribute("succMsg", "Book Update Successfully..");
+                session.setAttribute("succMsg", "User Update Successfully..");
                 response.sendRedirect("admin/all_users.jsp");
             }else{
                 session.setAttribute("failedMsg", "Something wrong on Server");

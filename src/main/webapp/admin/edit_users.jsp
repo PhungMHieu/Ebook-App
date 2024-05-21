@@ -1,4 +1,4 @@
-<<%-- 
+<%-- 
     Document   : add_books
     Created on : May 3, 2024, 12:06:37 PM
     Author     : PC
@@ -15,10 +15,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin: Add Books</title>
+        <title>Admin: Edit User</title>
         <%@include file="allCss.jsp" %>
     </head>
     <body style="background-color: #0f2f2;">
+    <!--<body>-->
         <%@include file="navbar.jsp" %>
         <div class="container">
             <div class="row">
@@ -60,6 +61,12 @@
                                 <input type="number" class="form-control" id="phno" 
                                         required="required"
                                        name="phno" value="<%=u.getPhno()%>">
+                            </div>
+                            <div class="form-group">
+                                <label for="phno">Password</label>
+                                <input type="text" class="form-control" id="password" 
+                                        required="required"
+                                       name="password" value="<%=u.getPassword()%>"> 
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>

@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <div style="margin-top: 300px">
+        <div style="margin-top: 120px">
             <%@include file="footer.jsp" %>
         </div>
         <!--<h1>Admin:Home</h1>-->

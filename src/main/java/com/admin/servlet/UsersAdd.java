@@ -78,6 +78,7 @@ public class UsersAdd extends HttpServlet {
             String name = request.getParameter("name");
             String email = request.getParameter("email");
             String phno = request.getParameter("phno");
+            String password = request.getParameter("password");
             String role = request.getParameter("role");
 //            log(fileName);
 //            log(price);
@@ -85,6 +86,8 @@ public class UsersAdd extends HttpServlet {
             u.setName(name);
             u.setEmail(email);
             u.setPhno(phno);
+            u.setPassword(password);
+            u.setRole(role);
             log(u.toString());
             UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
             boolean f = dao.addUsers(u);

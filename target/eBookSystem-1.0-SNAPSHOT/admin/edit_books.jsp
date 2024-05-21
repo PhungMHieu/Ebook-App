@@ -1,4 +1,4 @@
-<<%-- 
+<%-- 
     Document   : add_books
     Created on : May 3, 2024, 12:06:37 PM
     Author     : PC
@@ -15,7 +15,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin: Add Books</title>
+        <title>Admin: Edit Books</title>
         <%@include file="allCss.jsp" %>
     </head>
     <body style="background-color: #0f2f2;">

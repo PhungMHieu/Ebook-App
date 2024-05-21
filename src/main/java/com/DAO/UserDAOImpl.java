@@ -160,6 +160,7 @@ public class UserDAOImpl implements UserDAO{
                 u.setName(rs.getString("name"));
                 u.setPhno(rs.getString("phno"));
                 u.setEmail(rs.getString("email"));
+                u.setPassword(rs.getString("password"));
                 u.setRole(rs.getString("role"));
                 list.add(u);
             }
@@ -182,6 +183,7 @@ public class UserDAOImpl implements UserDAO{
                 u.setName(rs.getString("name"));
                 u.setEmail(rs.getString("email"));
                 u.setPhno(rs.getString("phno"));
+                u.setPassword(rs.getString("password"));
                 u.setRole(rs.getString("role"));
             }
         } catch (Exception e) {
@@ -193,12 +195,13 @@ public class UserDAOImpl implements UserDAO{
     public boolean updateEditUsers(User u) {
         boolean f = false;
         try {
-            String sql = "update user set name=?,email=?,phno=? where id = ?";
+            String sql = "update user set name=?,email=?,phno=?,password=? where id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, u.getName());
             ps.setString(2, u.getEmail());
             ps.setString(3, u.getPhno());
-            ps.setInt(4, u.getId());
+            ps.setString(4, u.getPassword());
+            ps.setInt(5, u.getId());
             System.out.println(u);
             System.out.println("1");
             int i = ps.executeUpdate();
@@ -233,12 +236,13 @@ public class UserDAOImpl implements UserDAO{
     public boolean addUsers(User u) {
         boolean f= false;
         try {
-            String sql = "insert into user(name,email,phno,role) values(?,?,?,?)";
+            String sql = "insert into user(name,email,phno,password,role) values(?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, u.getName());
             ps.setString(2, u.getEmail());
             ps.setString(3, u.getPhno());
-            ps.setString(4, u.getRole());
+            ps.setString(4, u.getPassword());
+            ps.setString(5, u.getRole());
             int i = ps.executeUpdate();
             if(i == 1){
                 f = true;
